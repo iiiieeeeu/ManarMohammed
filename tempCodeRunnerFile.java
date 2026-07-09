@@ -1,0 +1,1 @@
+     System.out.println("Enter Nu " + (i + 1));
