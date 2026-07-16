@@ -27,6 +27,7 @@ public class BankSystem {
             balance = balance + amount;
             System.out.println("Deposited successfully!");
         }else {
+            
             System.out.println("Error: Deposit amount must be positive!");
         }
     }
