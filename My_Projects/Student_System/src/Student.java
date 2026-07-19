@@ -1,4 +1,3 @@
-package My_Projects.Student_System.src;
 
 public class Student implements Comparable<Student> {
     private String name;

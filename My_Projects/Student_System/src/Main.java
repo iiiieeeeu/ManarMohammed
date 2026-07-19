@@ -1,4 +1,3 @@
-package My_Projects.Student_System.src;
 
 import java.util.Scanner;
 import java.util.Collections;
@@ -6,9 +5,9 @@ import java.util.ArrayList;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
-    static ArrayList<Student> students = new ArrayList<>();
 
     public static void main(String[] args) {
+        ArrayList<Student> students = new ArrayList<>();
         while (true) {
             System.out.println("----Student Management system----");
             System.out.println("1. add Student \n2. View Student " + "\n"
@@ -17,35 +16,13 @@ public class Main {
             int choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    input.nextLine();
-                    System.out.printf("Enter Student Name :  \n");
-                    String name = input.nextLine();
-                    System.out.printf("Enter Student Score :  \n");
-                    int score = input.nextInt();
-                    Student student = new Student(name, score);
-                    students.add(student);
-                    System.out.printf("Student Added Successfully (:  \n");
+                    AddStudent(input, students);
                     break;
                 case 2:
-                    if (students.isEmpty()) {
-                        System.out.printf("No Students found . please add some first (:  \n");
-                    } else {
-                        System.out.printf(" \n----Student List----- \n");
-                        System.out.printf("%-20s %-10s \n", "Name", "score");
-                        System.out.printf("------------------------------ \n");
-                        for (Student s : students) {
-                            System.out.printf("%-20s %-10d \n", s.getName(), s.getScore());
-                        }
-                    }
+                    viewStudents(students);
                     break;
                 case 3:
-                    if (students.isEmpty()) {
-                        System.out.printf("No Students to sort  \n");
-                    } else {
-                        Collections.sort(students);
-                        System.out.printf("Students sorted Successfully (Highest to Lowest)  \n");
-                        System.out.printf("Press 2 to view the sorted list (:  \n");
-                    }
+                    sortStudents(students);
                     break;
                 case 4:
                     System.out.printf("Exiting program . Goodbye (:  \n");
@@ -55,5 +32,44 @@ public class Main {
                     break;
             }
         }
+    }
+
+    
+
+    public static void AddStudent(Scanner input, ArrayList<Student> students) {
+        System.out.printf("Enter Student Name : ");
+        String name = input.next();
+        System.out.printf("Enter Student Score (0-100) : ");
+        int score = input.nextInt();
+        Student student = new Student(name, score);
+        students.add(student);
+        System.out.printf("Student added successfully!  \n");
+
+    }
+
+    public static void viewStudents(ArrayList<Student> students) {
+        if (students.isEmpty()) {
+            System.out.printf("No Students to display  \n");
+        } else {
+            System.out.printf("%-20s %-10s \n", "Name", "score");
+            System.out.printf("------------------------------ \n");
+            for (Student s : students) {
+                System.out.printf("%-20s %-10d \n", s.getName(), s.getScore());
+            }
+
+        }
+    }
+
+    public static void sortStudents(ArrayList<Student> students) {
+        if (students.isEmpty()) {
+            System.out.printf("No Students to sort  \n");
+        } else {
+            Collections.sort(students, (s1, s2) -> Integer.compare(s2.getScore(), s1.getScore()));
+            System.out.printf("Students sorted by score (Highest to Lowest):  \n");
+            for (Student s : students) {
+                System.out.printf("%-20s %-10d \n", s.getName(), s.getScore());
+            }
+        }
+
     }
 }
