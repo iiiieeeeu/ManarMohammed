@@ -1,18 +1,19 @@
 package My_Projects.Student_System.src;
+
 import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
+
 public class Main {
+    static Scanner input = new Scanner(System.in);
+    static ArrayList<Student> students = new ArrayList<>();
+
     public static void main(String[] args) {
-        ArrayList <Student> students = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.printf("\n----Student Management system----\\n" );
-            System.out.printf("1. add Student \n");
-            System.out.printf("2. View Student \n");
-            System.out.printf("3. Sort Student (Highest to Lowest)  \n");
-            System.out.printf("4. Exit  \n");
-            System.out.printf("Enter Your Choice :  \n");
+            System.out.println("----Student Management system----");
+            System.out.println("1. add Student \n2. View Student " + "\n"
+                    + "3. Sort Student (Highest to Lowest)\n4. Exit  \n");
+            System.out.printf("Enter Your Choice : ");
             int choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -26,23 +27,21 @@ public class Main {
                     System.out.printf("Student Added Successfully (:  \n");
                     break;
                 case 2:
-                    if (students.isEmpty()){
+                    if (students.isEmpty()) {
                         System.out.printf("No Students found . please add some first (:  \n");
-                    }else{
+                    } else {
                         System.out.printf(" \n----Student List----- \n");
-                        System.out.printf("%-20s %-10s \n" , "Name", "score" );
+                        System.out.printf("%-20s %-10s \n", "Name", "score");
                         System.out.printf("------------------------------ \n");
                         for (Student s : students) {
                             System.out.printf("%-20s %-10d \n", s.getName(), s.getScore());
                         }
                     }
-                
                     break;
-                
                 case 3:
-                    if (students.isEmpty()){
+                    if (students.isEmpty()) {
                         System.out.printf("No Students to sort  \n");
-                    }else{
+                    } else {
                         Collections.sort(students);
                         System.out.printf("Students sorted Successfully (Highest to Lowest)  \n");
                         System.out.printf("Press 2 to view the sorted list (:  \n");
