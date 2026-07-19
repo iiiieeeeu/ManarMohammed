@@ -1,6 +1,4 @@
-package My_Projects.Student_System.src;
 
- import java.util.Scanner;
 public class Student implements Comparable<Student>{
      private String name;
      private int score;

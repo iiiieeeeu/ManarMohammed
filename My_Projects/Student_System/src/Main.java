@@ -1,13 +1,12 @@
-package My_Projects.Student_System.src;
 import java.util.Scanner;
 import java.util.Collections;
 import java.util.ArrayList;
 public class Main {
+   static ArrayList <Student> students = new ArrayList<>();
+    static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        ArrayList <Student> students = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.printf("\n----Student Management system----\\n" );
+            System.out.printf("\n----Student Management system----\n" );
             System.out.printf("1. add Student \n");
             System.out.printf("2. View Student \n");
             System.out.printf("3. Sort Student (Highest to Lowest)  \n");
@@ -21,6 +20,7 @@ public class Main {
                     String name = input.nextLine();
                     System.out.printf("Enter Student Score :  \n");
                     int score = input.nextInt();
+                    input.nextLine();
                     Student student = new Student(name, score);
                     students.add(student);
                     System.out.printf("Student Added Successfully (:  \n");
