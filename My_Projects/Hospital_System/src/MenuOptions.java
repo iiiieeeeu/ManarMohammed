@@ -19,11 +19,11 @@ public class MenuOptions {
         System.out.println("---------------------------------------------------");
         System.out.println("Enter Patient's Full Name: ");
         String name = Main.input.nextLine();
-        Patient patient = new Patient(name);
-        Main.activePatients.add(patient);
+        Patient p = new Patient(name);
+        Main.activePatients.add(p);
         System.out.println("Patient added successfully!");
-        System.out.println("Patient Name: " + patient.getName());
-        System.out.println("Patient Number: " + patient.getPatientNumber());
+        System.out.println("Patient Name: " + p.getName());
+        System.out.println("Patient Number: " + p.getPatientNumber());
         System.out.println("***************************************************************");
     }
 
@@ -84,8 +84,8 @@ public class MenuOptions {
         System.out.println("Patient Number: " + targetPatient.getPatientNumber());
         System.out.println("Services Availed:");
         if (targetPatient.getServices() != null && !targetPatient.getServices().isEmpty()) {
-            for (Service service : targetPatient.getServices()) {
-                System.out.printf("- %-20s | %,d IQD\n", service.getName(), service.getPrice());
+            for (Service s : targetPatient.getServices()) {
+                System.out.printf("- %-20s | %,d IQD\n", s.getName(), s .getPrice());
             }
             System.out.printf("Total Cost: %,d IQD\n", targetPatient.calculateTotalCost());
         } else {
@@ -112,7 +112,7 @@ public class MenuOptions {
             return;
         }
         System.out.println("Patient " + targetPatient.getName() + " discharged successfully.");
-        System.out.println("\n==========================================================");
+        System.out.println("\n===========================================================");
         System.out.println("|                    HOSPITAL INVOICE                     |");
         System.out.println("============================================================");
         System.out.println("Patient Name : " + targetPatient.getName());

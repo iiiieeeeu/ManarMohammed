@@ -8,6 +8,7 @@ public class Patient {
     public Patient(String name) {
         this.Name = name;
         this.patientNumber = patientCounter++;
+        this.Services = new ArrayList<>();
        
     }
     
@@ -31,9 +32,8 @@ public class Patient {
     public int calculateTotalCost() {
         int totalCost = 0;
         if (Services != null) {
-            for (Service service : Services) {
-                totalCost += service.getPrice();
-            }
+            for (Service s: Services) {
+                totalCost += s.getPrice();          }
         }
         return totalCost;
     }

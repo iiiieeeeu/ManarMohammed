@@ -1,15 +1,17 @@
 public class Service {
     private String Name;
-    private int Price;
+    private double Price;
 
-public Service (String name , int price){
-    this.Name = name;
-    this.Price = price;
-}
-public String getName(){
-    return Name;
-}
-public int getPrice(){
-    return Price;
-}
+    public Service(String name, double price) {
+        this.Name = name;
+        this.Price = price;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public double getPrice() {
+        return Price;
+    }
 }
