@@ -1,3 +1,4 @@
+package models;
 public class Service {
     private String Name;
     private double Price;

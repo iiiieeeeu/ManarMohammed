@@ -1,4 +1,9 @@
+package mainapp;
 import java.util.Scanner;
+
+import models.Patient;
+import models.Service;
+import controllers.MenuOptions;
 import java.util.ArrayList;
 public class Main {
     public static Scanner input = new Scanner(System.in);

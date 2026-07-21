@@ -1,3 +1,8 @@
+package controllers;
+import mainapp.Main;
+import models.Patient;
+import models.Service;
+
 public class MenuOptions {
     public static void printMainMenu() {
         System.out.println("\n--------------------------------------------------------");
