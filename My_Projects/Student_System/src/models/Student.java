@@ -1,11 +1,12 @@
+package models;
 
 public class Student implements Comparable<Student> {
     private String name;
     private int score;
 
-    @Override
-    public int compareTo(Student other) {
-        return Integer.compare(other.score, this.score);
+    public Student(String name, int score) {
+        setName(name);
+        setScore(score);
     }
 
     public void setName(String name) {
@@ -32,8 +33,8 @@ public class Student implements Comparable<Student> {
         return score;
     }
 
-    public Student(String name, int score) {
-        setName(name);
-        setScore(score);
+    @Override
+    public int compareTo(Student other) {
+        return Integer.compare(other.score, this.score);
     }
 }
