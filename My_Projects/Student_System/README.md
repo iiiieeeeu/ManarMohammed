@@ -13,8 +13,8 @@
 * Collections (ArrayList & Sorting)
 * Clean Architecture & Defensive Programming
 
-```java
 ### 💻 مثال تطبيقي من الكود (البحث عن طالب):
+```java
 
 public static Student findStudent(int studentId) {
     // Data validation and searching for the student
