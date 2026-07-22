@@ -32,21 +32,23 @@
 * Dynamic Data Handling: Using ArrayList to manage patient lists (active and discharged) with high flexibility, and avoiding hardcoding by utilizing dynamic array lengths.
 
 ### 💻 مثال تطبيقي من الكود (Early Exit Pattern):
+```java
 public static void dischargePatient() {
     System.out.println("Enter Patient Number: ");
     int patientNumber = Main.input.nextInt();
     
-    // البحث عن المريض
+    // Find the patient
     Patient targetPatient = findPatient(patientNumber);
     
-    // إذا لم يتم العثور على المريض، نخرج من الدالة فوراً
+    // Early exit: if patient not found, exit the method immediately
     if (targetPatient == null) {
         System.out.println("Patient not found.");
         return; 
     }
     
-    System.out.println("تم تفريغ المريض بنجاح!");
+    System.out.println("Patient discharged successfully!");
 }
+```
 
 ---
 
