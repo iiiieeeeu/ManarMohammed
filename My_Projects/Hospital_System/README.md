@@ -1,4 +1,5 @@
 # 🏥 Hospital Management System
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) ![Architecture](https://img.shields.io/badge/Architecture-MVC-red?style=for-the-badge) ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 ## ✨ المميزات (Features)
 
 1. إدارة المرضى (Patient Management):
@@ -29,3 +30,34 @@
   - Null Checks: Proactive data validation to prevent the famous NullPointerException.
 * Encapsulation: Securely wrapping class data (like IDs and prices) by making them private and controlling them exclusively through Getters/Setters.
 * Dynamic Data Handling: Using ArrayList to manage patient lists (active and discharged) with high flexibility, and avoiding hardcoding by utilizing dynamic array lengths.
+
+### 💻 مثال تطبيقي من الكود (Early Exit Pattern):
+public static void dischargePatient() {
+    System.out.println("Enter Patient Number: ");
+    int patientNumber = Main.input.nextInt();
+    
+    // البحث عن المريض
+    Patient targetPatient = findPatient(patientNumber);
+    
+    // إذا لم يتم العثور على المريض، نخرج من الدالة فوراً
+    if (targetPatient == null) {
+        System.out.println("Patient not found.");
+        return; 
+    }
+    
+    System.out.println("تم تفريغ المريض بنجاح!");
+}
+
+---
+
+<details>
+  <summary>⚙️ <b>اضغط هنا لرؤية خطوات تشغيل المشروع</b></summary>
+  
+  <br>
+  
+  1. افتح المجلد في برنامج VS Code.
+  2. تأكد من تثبيت بيئة عمل Java (JDK).
+  3. قم بتشغيل ملف Main.java.
+  4. اتبع التعليمات في الـ Terminal لاختيار الأوامر.
+
+</details>
